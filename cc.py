@@ -84,5 +84,6 @@ def show_options():
         print(Back.RED + Fore.WHITE + "Invalid option.")
         show_options()
 
-print_logo()
-show_options()
+if __name__ == "__main__":
+    print_logo()
+    show_options()
