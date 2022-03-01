@@ -16,7 +16,7 @@ server_status = False    # True: server is UP / False: server is DOWN.
 ## FUNCIONS ##
 def export_agents():
     if len(agents_pool) > 0:
-        with open("agents.txt", "w") as fl:
+        with open("last_active_agents.txt", "w") as fl:
             for agent in agents_pool:
                 fl.write(agent + "\n")
     else:
@@ -48,10 +48,8 @@ def start_server():
     except KeyboardInterrupt:
         print(Fore.RESET + "Closing server...")
         server_status = False
-        print("Exporting active agents list...")
         export_agents()
         print_logo()
-        print(Fore.GREEN + "SUCCESS!" + Fore.RESET)
         show_options()
 
 ## INTERFACE ##
