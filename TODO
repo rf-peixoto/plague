@@ -1,0 +1,6 @@
+Modify agents to:
+
+1. After infecting a machine, check for the (hidden) settings file. This should contain the current target and a list of active agents.
+2. Use datetime to check the validity of the found data.
+3. Communicate with other agents and mutually verify lists of information. If an agent is out of date, modify its configuration.
+4. Remove the need for the central C&C panel.

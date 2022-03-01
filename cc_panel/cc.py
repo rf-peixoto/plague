@@ -37,6 +37,10 @@ def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((socket.gethostname(), 2022))
     server_socket.listen()
+#    try:
+#        system("python -m http.server 80 2> /dev/null")
+#    except PermissionError:
+#        print(Fore.RESET + "You must run this command as sudo. The HTTP server will not be started.")
     try:
         while True:
             # Get responses:
