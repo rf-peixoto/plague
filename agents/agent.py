@@ -51,6 +51,7 @@ class Node:
 
     def attack(self):
         socket_id = 0
+        print("Attacking {0}:{1}".format(self.target_ip, self.target_port))
         while True:
             try:
                 self.connections.append(socket.socket(socket.AF_INET, socket.SOCK_STREAM))
